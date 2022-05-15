@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import '~animate.css/animate.min';
+@import 'aos/dist/aos.css';
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+    background-color: #f6f7ff;
+}
+
+h1{
+    display: block;
+    font-size: 60px;
+    font-weight: 1000;
+}
+
+h2{
+    display: block;
+    font-size: 28px;
+    font-weight: 1000;
+}
+
+h3{
+    display: block;
+    font-size: 24px;
+    font-weight: 1000;
+}
+
+h4{
+    display: block;
+    font-size: 15px;
+    font-weight: 1000;
+    -webkit-font-smoothing: antialiased;
+}
+
+h5{
+    display: block;
+    font-size: 16px;
+}
+
+ul{
+    list-style-type:none;
+    padding-left: 0%;
+}
+
+.form-control:focus {
+    border-color: #D7C49EFF;
+    box-shadow: inset 0 1px 1px #D7C49EFF, 0 0 8px #D7C49EFF;
+}
+
+// Responsiveness
+$break-small: 650px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
+      @content;
+    }
+  } @else if $media == handhelds-and-medium-screens {
+    @media only screen and (max-width: $break-large - 1) {
+      @content;
+    }
+  } @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  }
+  
+}

@@ -1,0 +1,53 @@
+<div class="card side-card  animate__animated animate__fadeInLeft " style="width: 18rem;">
+    <div class="container">
+      <div class="text-center py-4" (mouseenter)="onProfileHover()" (mouseleave)="onProfileHover()">
+        <img class="profile-image rounded-circle" src="../../../assets/pdf/profile2.jpeg">
+        <div *ngIf="overlaid" class="overlay">
+          <div class="row">
+            <div class="col" (click)="onClick(myLinkedin)"><i class="fab fa-linkedin fa-2x cursor"></i></div>
+            <div class="col" (click)="onClick(myFacebook)"><i class="fab fa-facebook fa-2x cursor"></i></div>
+            <div class="col" (click)="onClick(myGithub)"><i class="fab fa-github fa-2x cursor"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <!-- <h2 class="card-title">Ruth Ndunge</h2> -->
+        <!-- <p style="font-size: 14px;">ndunge2ruth101@gmail.com</p> -->
+        <div>
+          <div class="face-button mx-3" (click)="downloadPdf()">
+            <div class="face-primary">
+              <span class="icon fa fa-download"></span>
+              Resume
+            </div>
+            <!-- <div class="face-primary">
+              <span class="icon fa fa-file-pdf"></span>
+              Size: 35.4 kb
+            </div> -->
+          </div>
+          </div>
+        <ul class="mt-5">
+  
+          <li (click)="scrollToTop()" class="my-2" [ngClass]="{'active':currentActive == 0}"><i class="fa fa-home"
+              style="margin-right: 1rem;"></i> Home</li>
+  
+          <li (click)="ScrollIntoView(aboutOffset)" class="my-2" [ngClass]="{'active':currentActive == 1}"><i
+              class="fa fa-user" style="margin-right: 1rem;"></i> About
+          </li>
+  
+          <li (click)="ScrollIntoView(servicesOffset)" class="my-2" [ngClass]="{'active':currentActive == 2}"><i
+              class="fa fa-lightbulb" style="margin-right: 1rem;"></i> Skills</li>
+  
+          <li (click)="ScrollIntoView(experiencesOffset)" class="my-2" [ngClass]="{'active':currentActive == 3}"><i
+              class="fa fa-briefcase" style="margin-right: 1rem;"></i> Experience</li>
+  
+          <li (click)="ScrollIntoView(hobbyOffset)" class="my-2" [ngClass]="{'active':currentActive == 4}"><i
+              class="fa fa-laptop-code" style="margin-right: 1rem;"></i>
+            Projects </li>
+  
+          <li (click)="ScrollIntoView(contactOffset)" class="my-2" [ngClass]="{'active':currentActive == 5}"><i
+              class="fa fa-phone" style="margin-right: 1rem;"></i>
+            Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>

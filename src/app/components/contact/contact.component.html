@@ -1,0 +1,56 @@
+<div class=" mt-5" data-aos="fade-up" data-aos-once="true">
+    <div class="my-auto">
+      <div class="card shadow " style="width: 50rem; height: auto;">
+        <section>
+          <div class="card-body">
+            <div class="row">
+              <h3 class="card-title main-title">Let's get in touch</h3>
+            </div>
+            <form action="https://formsubmit.co/a85fac2cf2d3db310f426586de039d22" method="POST">
+                <div [formGroup]="FormData">
+              <div class="row my-3">
+                <div class="col">
+                  <input type="text" name="FirstName"
+                    [ngClass]="{'is-invalid': FormData.controls.FirstName.invalid && FormData.controls.FirstName.dirty}"
+                    formControlName="FirstName" class="form-control" placeholder="First name">
+                  <div class="text-center">
+                    <span class="text-danger"
+                      *ngIf="FormData.controls.FirstName.invalid && FormData.controls.FirstName.dirty"> Enter your First
+                      Name Please</span>
+                  </div>
+                </div>
+                <div class="col">
+                  <input type="text" name="LastName"
+                    [ngClass]="{'is-invalid': FormData.controls.LastName.invalid && FormData.controls.LastName.dirty}"
+                    formControlName="LastName" class="form-control" placeholder="Last name">
+                  <div class="text-center">
+                    <span class="text-danger"
+                      *ngIf="FormData.controls.LastName.invalid && FormData.controls.LastName.dirty"> Enter your Last Name
+                      Please</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group my-3 text-center">
+                <input type="email" name="Email"
+                  [ngClass]="{'is-invalid': FormData.controls.Email.invalid && FormData.controls.Email.touched}"
+                  formControlName="Email" class="form-control" id="exampleFormControlInput1"
+                  placeholder="Your Email Address">
+                  <span class="text-warning"
+                  *ngIf="FormData.controls.Email.invalid && FormData.controls.Email.dirty"> Enter your beautiful Email Address &#10024;</span>
+                  <span class="text-success"
+                  *ngIf="FormData.controls.Email.valid && FormData.controls.Email.dirty"><i class="fas fa-check"></i></span>
+              </div>
+              <div class="form-group my-3">
+                <textarea class="form-control" name="Message" formControlName="Message" id="exampleFormControlTextarea1"
+                  placeholder="Write me something nice" rows="3"></textarea>
+              </div>
+              <div class="text-center">
+                <button [disabled]="FormData.invalid" type="submit" class="btn">Send <span class="mx-1"><li class="fa fa-paper-plane fa-sm"></li></span></button>
+              </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
